@@ -1,15 +1,17 @@
 import java.awt.Color;
 import javax.swing.JFrame;
 
-public class TurtleWorld
+public class TurtleLab
 {
     public static void main(String args[])
     throws InterruptedException
 
     {
+        
         World turtleWorld = new World();
         Turtle turtle = new Turtle(turtleWorld);
         Turtle johncena = new Turtle(turtleWorld);
+       
         turtle.setPenColor(Color.BLUE);
         turtle.penUp();
         turtle.setShellColor(Color.RED);
@@ -49,7 +51,7 @@ public class TurtleWorld
         johncena.setPenColor(Color.BLUE);
         Thread.sleep(1000); // sleep 1000 milliseconds (1 second)
         johncena.penUp();
-        Color color = new Color(250, 250, 250);
+        Color color = new Color(25, 25, 25);
         johncena.setShellColor(color);
         Thread.sleep(1000); // sleep 1000 milliseconds (1 second)
         johncena.turnLeft();
@@ -93,6 +95,20 @@ public class TurtleWorld
         Thread.sleep(1000); // sleep 1000 milliseconds (1 second)
         johncena.forward(50);
         
-       
+       johncena.setPenColor(Color.BLUE);
+       johncena.penUp();
+       johncena.turnRight();
+       johncena.turnRight();
+       johncena.forward(200);
+       johncena.turnLeft();
+       johncena.penDown();
+       int num = 1;
+       while (num < 500)
+       {
+           johncena.forward(num);
+           johncena.turnRight();
+           Thread.sleep(100);
+           num += 1;
+        }
     }
 }
